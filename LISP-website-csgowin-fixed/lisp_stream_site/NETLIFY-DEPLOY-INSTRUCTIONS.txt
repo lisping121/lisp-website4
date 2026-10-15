@@ -1,0 +1,25 @@
+LISP WEBSITE — DEPLOY THE LEADERBOARD FUNCTION
+
+Why the leaderboard showed HTTP 404:
+The site was deployed as static files, but Netlify's serverless function was not deployed.
+Uploading files through Netlify Drop may not deploy functions.
+
+Recommended fix (Git-based deploy):
+1. Extract this ZIP.
+2. Put the contents of the lisp_stream_site folder in a GitHub repository (do not upload a real .env file or API key).
+3. In Netlify, choose Add new site / Import an existing project and connect that repository.
+4. Set the Base directory to lisp_stream_site only if the repository contains the outer folder as a subdirectory. If you uploaded the contents of lisp_stream_site directly to the repository root, leave Base directory blank.
+5. The included netlify.toml sets publish = "." and functions = "netlify/functions".
+6. In Netlify Site configuration → Environment variables, set LISP_API_KEY to your rotated API key.
+7. Trigger a new deploy.
+
+After deployment, test this URL on your own site:
+https://YOUR-SITE.netlify.app/.netlify/functions/leaderboard
+It should return JSON (possibly an API error, but not Netlify's generic 404). Do not share your API key.
+
+If the function URL still returns 404:
+- Open Netlify → Deploys → latest deploy → Deploy log and confirm that the function named "leaderboard" was built/deployed.
+- Ensure the deployed site contains netlify/functions/leaderboard.js in the configured base directory.
+- Do not use a plain static drag-and-drop deploy for this setup.
+
+Note: Once the function is deployed, a separate API response may still show a CSGOWIN endpoint, key, or permission issue. This step only fixes the missing function deployment.

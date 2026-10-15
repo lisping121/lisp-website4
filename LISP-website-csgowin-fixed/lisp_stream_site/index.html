@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d11">
+  <title>LISP — Watch. Earn. Win.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-splatter" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="logo" href="index.html" aria-label="LISP home">LISP<span>♛</span></a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+    <nav id="nav">
+      <a class="nav-link active" href="index.html">⌂ <span>Home</span></a>
+      <a class="nav-link" href="stream.html">Stream</a>
+      <a class="nav-link" href="leaderboard.html">Leaderboard</a>
+      <a class="nav-link" href="bonuses.html">Rewards</a><a class="nav-link" href="shop.html">Shop</a>
+      <a class="nav-link" href="about.html">About</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">⌕</button>
+      <button class="icon-btn notification" id="notifyBtn" aria-label="Notifications">♧<i></i></button>
+      <button class="btn btn-outline" data-modal="login">Login</button>
+      <button class="btn btn-red" data-modal="signup">Sign Up</button>
+    </div>
+  </header>
+
+  <main class="layout" id="home">
+    <section class="main-column">
+      <section class="hero panel">
+        <div class="hero-copy">
+          <div class="eyebrow">THE NEXT BIG THING IN LIVE STREAMING</div>
+          <h1>LISP</h1>
+          <h2>WATCH. EARN. WIN.</h2>
+          <p>Tune in to the stream, collect bonuses,<br>and climb the leaderboard!</p>
+          <button class="promo-code" data-copy="LISP">USE CODE: <b>LISP</b> <span>▣</span></button>
+        </div>
+        <div class="hero-mascot" aria-hidden="true">
+          <div class="burst"></div><div class="card-mascot"><span class="suit">A<br>♠</span><div class="eyes"><i></i><i></i></div><div class="smile"></div><span class="suit bottom">♠</span></div>
+          <div class="chip chip-one">♛</div><div class="chip chip-two">◉</div><div class="hero-spark">✦</div>
+        </div>
+        <div class="hero-side">BIG<br>STREAMS<br><b>BIGGER<br>REWARDS!</b></div>
+        <button class="hero-code-hotspot" data-copy="LISP" aria-label="Copy LISP affiliate code"></button>
+      </section>
+
+      <section class="benefits panel">
+        <article><div class="benefit-icon">♛</div><div><h3>EXCLUSIVE<br>BONUSES</h3><p>Special rewards<br>for the community</p></div></article>
+        <article><div class="benefit-icon">♔</div><div><h3>AFFILIATE CODE<br>LISP</h3><p>Unlock bigger<br>perks and rewards</p></div></article>
+        <article><div class="benefit-icon">★</div><div><h3>WATCH & EARN</h3><p>Collect points<br>while you watch</p></div></article>
+        <article><div class="benefit-icon">♟</div><div><h3>COMMUNITY</h3><p>Be part of the<br>LISP family</p></div></article>
+      </section>
+
+      <section class="panel live-section" id="live">
+        <div class="section-heading"><h2><span class="live-dot"></span>Live Now</h2><a href="stream.html">View All <b>→</b></a></div>
+        <div class="live-grid" id="live-grid">
+          <button class="stream-card" data-stream="LISP"><div class="stream-art art-red image-stream stream-lisp"><span class="art-crown">♛</span><div class="playing-card">A<span>♠</span><b>☺</b></div><span class="art-word">LISP</span></div><div class="stream-meta"><span class="avatar red-avatar">♛</span><div><b>LISP</b><small>Just Chatting</small></div><span class="viewers">● 4.8K</span></div><span class="tag">Chill</span></button>
+          <button class="stream-card" data-stream="AceHigh88"><div class="stream-art art-blue image-stream stream-ace"><span class="art-crown">♫</span><div class="round-mascot">☺</div><span class="art-word">ACE</span></div><div class="stream-meta"><span class="avatar blue-avatar">A</span><div><b>AceHigh88</b><small>Just Chatting</small></div><span class="viewers">● 3.2K</span></div><span class="tag">Community</span></button>
+          <button class="stream-card" data-stream="BluffMaster"><div class="stream-art art-gold image-stream stream-bluff"><div class="dice">⚄</div><span class="art-word">BLUFF</span></div><div class="stream-meta"><span class="avatar gold-avatar">B</span><div><b>BluffMaster</b><small>Just Chatting</small></div><span class="viewers">● 2.7K</span></div><span class="tag">Giveaways</span></button>
+          <button class="stream-card" data-stream="PokerQueen"><div class="stream-art art-green image-stream stream-queen"><div class="round-mascot shades">♠</div><span class="art-word">QUEEN</span></div><div class="stream-meta"><span class="avatar green-avatar">Q</span><div><b>PokerQueen</b><small>Just Chatting</small></div><span class="viewers">● 1.9K</span></div><span class="tag">Vibes</span></button>
+        </div>
+      </section>
+
+      <section class="promo-grid" id="bonuses">
+        <article class="promo-card bonus-card"><div class="promo-symbol">♛</div><div><h2>DAILY<br>BONUSES</h2><p>Check in daily for<br>exclusive rewards!</p><button class="btn btn-dark" id="claimBonus">VIEW BONUSES <span>→</span></button><small class="claim-status" id="claimStatus"></small></div><span class="sparkle">✦</span></article>
+        <article class="promo-card code-card"><div class="crown-large">♛</div><h2>USE CODE:</h2><strong>LISP</strong><button class="btn btn-red" data-copy="LISP">COPY CODE <span>▣</span></button></article>
+        <article class="promo-card community-card" ><div class="promo-symbol">☺</div><div><h2>BE PART OF<br>THE LISP<br>COMMUNITY</h2><p>Join the chat, make friends,<br>and be part of something big!</p><a class="btn btn-dark" href="https://discord.gg/lispy" target="_blank" rel="noopener noreferrer">JOIN NOW <span>→</span></a></div></article>
+      </section>
+    </section>
+
+    <aside class="sidebar">
+      <section class="panel featured">
+        <div class="featured-top"><span class="live-pill">● LIVE</span><span class="viewer-count">♟ 4,892</span><button class="btn btn-red watch-btn" data-stream="LISP">▶ Watch Live</button></div>
+        <div class="featured-art"><div class="feature-glow"></div><div class="feature-card">A<span>♠</span><b>☺</b></div><div class="feature-title">LISP<span>♛</span></div><div class="feature-chip">◉</div></div>
+        <div class="featured-info"><span class="avatar red-avatar">♛</span><div><b>LISP</b><small>Just Chatting</small></div><div class="tag-list"><span>Chill</span><span>Community</span><span>Giveaways</span></div></div>
+      </section>
+
+      <section class="panel leaderboard" id="leaderboard">
+        <div class="leader-title"><h2><span>♛</span> LEADERBOARD</h2><a href="leaderboard.html" id="viewAllLeaders">View All →</a></div>
+        <div class="leader-tabs" role="tablist" aria-label="Leaderboard period">
+          <button class="active" data-period="weekly" role="tab">Weekly</button><button data-period="monthly" role="tab">Monthly</button><button data-period="all" role="tab">All Time</button>
+        </div>
+        <div class="leader-head"><span>#</span><span>Streamer</span><span>Watch Hours</span><span>Rewards</span></div>
+        <div id="leaderRows"></div>
+        <p class="leader-note">Demo leaderboard · sample data</p>
+      </section>
+    </aside>
+  </main>
+
+  <div class="search-drawer" id="searchDrawer"><input id="searchInput" type="search" placeholder="Search streamers..."><button id="closeSearch" aria-label="Close search">✕</button><div id="searchResults"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close">✕</button><div class="modal-logo">LISP♛</div><h2 id="modalTitle">Welcome back</h2><p id="modalIntro">Sign in to your LISP account.</p><form id="accountForm"><label>Email<input type="email" id="email" placeholder="you@example.com" required></label><label>Password<input type="password" id="password" placeholder="At least 8 characters" minlength="8" required></label><label class="terms"><input type="checkbox" id="remember"> Keep me signed in</label><button class="btn btn-red full-width" type="submit" id="formSubmit">Login</button></form><p class="modal-foot" id="modalFoot">New here? <button data-modal="signup">Create an account</button></p><small class="demo-warning">Demo only: this form does not create a real account or send your data anywhere.</small></section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

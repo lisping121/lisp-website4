@@ -1,0 +1,32 @@
+LISP — CSGOWIN LEADERBOARD FIX PACKAGE
+
+WHAT THIS FIX DOES
+- Uses the documented API base URL https://api.csgowin.com/api.
+- Calls GET /leaderboard/{code} and sends the key in the x-apikey header.
+- Keeps the key server-side in Netlify's LISP_API_KEY environment variable.
+- Shows upstream HTTP status, response preview, and troubleshooting hints instead of hiding the reason.
+- Makes the frontend surface API errors and search nested response objects for leaderboard entries.
+
+IMPORTANT LIMITATION
+No code can guarantee a working live leaderboard until CSGOWIN accepts the API key and affiliate code and returns the documented data. A 403 is an access-denied response, usually requiring the correct active key/permissions and affiliate code. Do not publish or paste your API key.
+
+DEPLOY
+1. Extract this ZIP.
+2. Deploy the contents of the lisp_stream_site folder to the same GitHub repository connected to Netlify (keep netlify.toml and netlify/functions/leaderboard.js in place).
+3. In Netlify → Site configuration → Environment variables, set:
+   LISP_API_KEY = the key from https://csgowin.com/profile/affiliates
+4. Optional if your affiliate code is not "lisp", set:
+   CSGOWIN_AFFILIATE_CODE = your exact affiliate code
+5. Trigger a new production deploy.
+6. Test:
+   https://YOUR-SITE.netlify.app/.netlify/functions/leaderboard?period=weekly
+
+IF HTTP 403 REMAINS
+- Confirm the key is copied from the CSGOWIN Affiliates Dashboard API section.
+- Confirm it is active and authorized for the external API.
+- Confirm CSGOWIN_AFFILIATE_CODE is your actual affiliate code, not necessarily your website name.
+- If these are correct, contact CSGOWIN support with the HTTP status and timestamp and ask whether API access is enabled for the key.
+- Never share the key in GitHub, browser JavaScript, screenshots, or chat.
+
+DOCUMENTATION
+https://docs.csgowin.com/
